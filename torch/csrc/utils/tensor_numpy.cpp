@@ -152,7 +152,7 @@ at::Tensor tensor_from_numpy(PyObject* obj) {
           "At least one stride in the given numpy array is negative, and "
           "tensors with negative strides are not currently supported. "
           "You can make your numpy array contiguous with np.ascontiguousarray() "
-          "to workaround this issue. (Doing so may copy your data.) ");
+          "to workaround this issue. (Doing so will copy your data, however.) ");
     }
     // XXX: this won't work for negative strides
     storage_size += (sizes[i] - 1) * strides[i];
