@@ -149,8 +149,8 @@ at::Tensor tensor_from_numpy(PyObject* obj) {
   for (int i = 0; i < ndim; i++) {
     if (strides[i] < 0) {
       throw ValueError(
-          "At least one stride in the given numpy array is negative. "
-          "Tensors with negative strides are not currently supported. "
+          "At least one stride in the given numpy array is negative, and "
+          "tensors with negative strides are not currently supported. "
           "You can make your numpy array contiguous with np.ascontiguousarray() "
           "to workaround this issue. (Doing so may copy your data.) ");
     }
